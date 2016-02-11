@@ -28,6 +28,10 @@ In order to access the P&M Git repos from within our VM
 ### install phpMyAdmin
 
 Needs to be installed manually inside the VM: `sudo apt-get install phpmyadmin`
+* choose apach2 as server
+* choose yes on question `Configure database for phpmyadmin with dbconfig-common?`
+* choose something you remember for db user and password, e.g. `root`
+
 Then, navigate to http://pm-vagrant.local/phpmyadmin in your host os. 
 
 ## add Projects
@@ -118,6 +122,8 @@ The config will be included after running:
 $ vagrant reload --provision
 ```
 Then, you should have a generated config-custom.yaml file in the folder pm_vagrant/phphpet, containing a merge of all the config.yaml files of your projects.
+
+Finally, include your ```myProject.local``` to your /etc/hosts file of your host os and navigate to that url in your browser.
 
 ## Troubleshooting
 
