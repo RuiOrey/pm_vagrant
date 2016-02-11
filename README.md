@@ -108,7 +108,7 @@ apache:
 
 Be aware, that the apache module section OVERWRITES the modules config of the global config.yaml!
 
-Now, include this config in pm_vagrant/Vagrantfile add a line 
+Now, to include this config in pm_vagrant/Vagrantfile, add a line 
 ```
 configCustom.deep_merge!(YAML.load_file("#{dir}/projects/myProject/config.yaml")) # add such a row for each project
 ``` 
