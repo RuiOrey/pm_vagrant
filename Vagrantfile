@@ -6,6 +6,12 @@ require 'yaml'
 require "#{dir}/puphpet/ruby/deep_merge.rb"
 require "#{dir}/puphpet/ruby/puppet.rb"
 
+# *** CUSTOM PROJECT CONFIGURATIONS ***
+configCustom = {}
+configCustom.deep_merge!(YAML.load_file("#{dir}/projects/pm_3deluxe/config.yaml")) # add such a row for each project
+File.open("#{dir}/puphpet/config-custom.yaml", 'w') {|f| f.write configCustom.to_yaml }
+
+
 configValues = YAML.load_file("#{dir}/puphpet/config.yaml")
 
 provider = ENV['VAGRANT_DEFAULT_PROVIDER']

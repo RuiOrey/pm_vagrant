@@ -3,7 +3,7 @@ vagrantfile:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: *.local
+        hostname: pm-vagrant.local
         memory: '1024'
         cpus: '2'
         chosen_provider: virtualbox
@@ -217,11 +217,10 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_avhvm60s0enj:
+        projects_root: # add such a node in your local config.yaml, e.g. projects/MyProject/config.yaml and include this file in puphpet/puppet/manifests/site.pp
             servername: pm-vagrant.local
             serveraliases:
                 - pm-vagrant.local
-                - pm.local
             docroot: /var/www/projects
             port: '80'
             setenv:

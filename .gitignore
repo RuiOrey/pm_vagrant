@@ -35,3 +35,5 @@ style.css.map
 
 # vagrant stuff
 .vagrant
+projects/*
+puphpet/config-custom.yaml
