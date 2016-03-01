@@ -9,10 +9,8 @@ require "#{dir}/puphpet/ruby/puppet.rb"
 # *** CUSTOM PROJECT CONFIGURATIONS ***
 configCustom = {}
 # ADD YOUR PROJECTS HERE
-configCustom.deep_merge!(YAML.load_file("#{dir}/projects/pm_3deluxe/config.yaml"))
-configCustom.deep_merge!(YAML.load_file("#{dir}/projects/wordpress-default/config.yaml"))
-#configCustom.deep_merge!(YAML.load_file("#{dir}/projects/myProject/config.yaml")) # add such a row for each project
-File.open("#{dir}/puphpet/config-custom.yaml", 'w') {|f| f.write configCustom.to_yaml }
+#configCustom.deep_merge!(YAML.load_file("#{dir}/projects/PROJECT/config.yaml")) # add such a row for each project
+#File.open("#{dir}/puphpet/config-custom.yaml", 'w') {|f| f.write configCustom.to_yaml }
 
 
 configValues = YAML.load_file("#{dir}/puphpet/config.yaml")
