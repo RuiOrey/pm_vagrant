@@ -4,8 +4,8 @@ vagrantfile:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
         hostname: pm-vagrant.local
-        memory: '1024'
-        cpus: '2'
+        memory: '4096'
+        cpus: '4'
         chosen_provider: virtualbox
         box_version: ''
         network:
@@ -14,6 +14,9 @@ vagrantfile:
                 vflnp_fuepjnd52xmv:
                     host: '8158'
                     guest: '22'
+                vflnp_fuepjnd52asd:
+                    host: '35729'
+                    guest: '35729'
         post_up_message: ''
         provider:
             virtualbox:
@@ -279,7 +282,7 @@ apache:
 php:
     install: '1'
     settings:
-        version: '56'
+        version: '55'
     modules:
         php:
             - cli
@@ -287,6 +290,7 @@ php:
             - mcrypt
             - curl
             - gd
+            - apcu
         pear: {  }
         pecl: {  }
     ini:
@@ -297,7 +301,7 @@ php:
         post_max_size: 512M
         upload_max_filesize: 512M
         max_execution_time: '300'
-        memory_limit: 256M
+        memory_limit: 1024M
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
@@ -399,7 +403,7 @@ mariadb:
 mysql:
     install: '1'
     settings:
-        version: '5.5'
+        version: '5.6'
         root_password: 'root'
         override_options: {  }
     adminer: 1

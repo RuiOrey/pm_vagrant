@@ -22,7 +22,7 @@ The project folder is also mounted inside your vm:
 
 ### forward ssh key
 
-In order to access the P&M Git repos from within our VM
+In order to get grunt-wordpress-deploy to work (needs to access server via ssh using publickkey):
 * run (in your host os): `ssh-add ~/.ssh/pm-vm-NAME.pem`
 
 ### install phpMyAdmin
