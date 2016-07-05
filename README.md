@@ -37,7 +37,7 @@ Then, navigate to http://pm-vagrant.local/phpmyadmin in your host os.
 ## add Projects
 
 Move to your projects folder and clone th project you want to add.
-This project should contain a confi.yaml, containing that apache config (change at least the 'myProject' strings):
+This project should contain a confi.yaml, containing that apache config (change at least the 'MYPROJECT' strings):
 ```yaml
 apache:
     modules:
@@ -45,11 +45,11 @@ apache:
         - rewrite
         - headers
     vhosts:
-        projects_myProject:
-            servername: myProject.local
+        projects_MYPROJECT:
+            servername: MYPROJECT.local
             serveraliases:
-                - myProject.local
-            docroot: /var/www/projects/myProject/source
+                - MYPROJECT.local
+            docroot: /var/www/projects/MYPROJECT/source
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -69,7 +69,7 @@ apache:
                     path: /usr/share/phpmyadmin
             directories:
                 avd_xeehkr0antpp:
-                    path: /var/www/projects/pm_3deluxe/source
+                    path: /var/www/projects/MYPROJECT/source
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -110,8 +110,8 @@ Be aware, that the apache module section OVERWRITES the modules config of the gl
 
 Now, to include this config in pm_vagrant/Vagrantfile, add a line 
 ```
-configCustom.deep_merge!(YAML.load_file("#{dir}/projects/myProject/config.yaml")) # add such a row for each project
-``` 
+configCustom.deep_merge!(YAML.load_file("#{dir}/projects/MYPROJECT/config.yaml")) # add such a row for each project
+```
 under the line 
 ```
 # ADD YOUR PROJECTS HERE
@@ -123,7 +123,7 @@ $ vagrant reload --provision
 ```
 Then, you should have a generated config-custom.yaml file in the folder pm_vagrant/phphpet, containing a merge of all the config.yaml files of your projects.
 
-Finally, include your ```myProject.local``` to your /etc/hosts file of your host os and navigate to that url in your browser.
+Finally, include your ```MYPROJECT.local``` to your /etc/hosts file of your host os and navigate to that url in your browser.
 
 ## Troubleshooting
 
