@@ -38,7 +38,7 @@ vagrantfile:
             vflsf_8tcdeqrgdsin:
                 source: ./projects
                 target: /var/www/projects
-                sync_type: nfs
+                sync_type: default
                 smb:
                     smb_host: ''
                     smb_username: ''
@@ -60,7 +60,7 @@ vagrantfile:
             vflsf_bd8df78bpp46:
                 source: ./
                 target: /vagrant
-                sync_type: nfs
+                sync_type: default
                 smb:
                     smb_host: ''
                     smb_username: ''
@@ -79,7 +79,7 @@ vagrantfile:
             vflsf_bd8df78bpp47:
                 source: ./projects
                 target: /home/vagrant/projects
-                sync_type: nfs
+                sync_type: default
                 smb:
                     smb_host: ''
                     smb_username: ''
