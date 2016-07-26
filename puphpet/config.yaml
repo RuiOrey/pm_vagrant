@@ -282,7 +282,7 @@ apache:
 php:
     install: '1'
     settings:
-        version: '55'
+        version: '56'
     modules:
         php:
             - cli
@@ -403,8 +403,8 @@ mariadb:
 mysql:
     install: '1'
     settings:
-        version: '5.6'
-        root_password: 'root'
+        version: '5.5'
+        root_password: root
         override_options: {  }
     adminer: 1
     users:
